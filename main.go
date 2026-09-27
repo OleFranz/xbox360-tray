@@ -153,13 +153,13 @@ func updateFromStatus(status xinput.DeviceStatus) {
 	var label string
 	switch status.Level {
 	case xinput.BatteryFull:
-		st, label = icon.StateFull, "Full"
+		st, label = icon.StateFull, "full"
 	case xinput.BatteryMedium:
-		st, label = icon.StateMedium, "Medium"
+		st, label = icon.StateMedium, "medium"
 	case xinput.BatteryLow, xinput.BatteryEmpty:
-		st, label = icon.StateLow, "Low"
+		st, label = icon.StateLow, "low"
 	default:
-		st, label = icon.StateMedium, "Unknown"
+		st, label = icon.StateMedium, "unknown"
 	}
 
 	setIcon(st)
