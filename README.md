@@ -12,11 +12,10 @@ Windows API calls via `syscall`.
 Build the .exe with:
 
 ```
-go build -ldflags="-H=windowsgui -s -w" -o xbox360-tray.exe .
+go build -ldflags="-H=windowsgui" -o xbox360-tray.exe .
 ```
 
 - `-H=windowsgui` suppresses the console window.
-- `-s -w` strips debug info, shrinking the binary.
 
 ## Features
 
