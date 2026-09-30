@@ -1,6 +1,7 @@
 package main
 
 import (
+	"runtime"
 	"time"
 
 	"xbox360tray/internal/autostart"
@@ -43,6 +44,9 @@ type appState struct {
 var state = &appState{}
 
 func main() {
+	runtime.LockOSThread()
+	defer runtime.UnlockOSThread()
+
 	// single instance: if the app is already running, notify it and exit
 	if !ipc.AcquireOrNotify() {
 		return
